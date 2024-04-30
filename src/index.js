@@ -1,3 +1,13 @@
-//      -- > mongodb+srv://sonawaneteju4:<password>@okr-db.shyg3re.mongodb.net/?retryWrites=true&w=majority&appName=OKR-DB
+import 'dotenv/config'
+import connectToMongo from './db/db.js'
+import { app } from './app.js'
 
-//  Id sonawaneteju4 Tejas123
+connectToMongo()
+    .then(() => {
+        app.listen(process.env.PORT || 8000, () => {
+            console.log(`⚙️  Server is running at port : ${process.env.PORT}`);
+        })
+    })
+    .catch((err) => {
+        console.log("MONGO db connection failed !!! ", err);
+    })
