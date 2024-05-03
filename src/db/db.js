@@ -6,7 +6,9 @@ const connectToMongo = async () => {
     await mongoose
         .connect(mongoURI)
         .then((res) => {
-            console.log("\n MongoDb Connected ! DB HOST: " + res.connection.host)
+            console.log("\n MongoDb Connected ! DB HOST: " + res.connection.host + "\n");
+            console.log(" DB Name: " + res.connection.name + "\n");
+            
         })
         .catch(() => {
             console.error(" Err:  Can't Connect to Server");
