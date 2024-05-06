@@ -12,9 +12,10 @@ app.use(express.static("public"));
 app.use(cookieParser());
 
 app.get("/api/v1/", (req, res) => {
-    res.send("Hello You Connect To Server 🙂");
+    res.send("Hello You Connect To Server 🔥");
 });
 
+// Import Router
 import userRouter from "./routes/user.routes.js";
 app.use("/users", userRouter);
 
