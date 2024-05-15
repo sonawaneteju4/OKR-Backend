@@ -15,7 +15,7 @@ const ticketSchema = new mongoose.Schema({
     status : {
         type : String,
         required : true,
-        enum : ["open","closed","proccessing"]
+        enum : ["created","assigned","inprogress","reopened","resolved","closed","proccessing"]
     
     },
     category : {
@@ -31,7 +31,7 @@ const ticketSchema = new mongoose.Schema({
         type : String,
     },
     expectedTime : {
-        type : String,
+        type : Date,
     },
     createdAt : {
         type : Date,
@@ -43,4 +43,4 @@ const ticketSchema = new mongoose.Schema({
     }
 },{timestamps:true});
 
-export default mongoose.model("Ticket",ticketSchema);
+export  const Ticket =  mongoose.model("Ticket",ticketSchema);
