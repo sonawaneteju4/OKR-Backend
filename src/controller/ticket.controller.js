@@ -51,7 +51,7 @@ const createTicket = asyncHandler(async (req, res) => {
     const saveTicket = await ticket.save();
     res.status(200).json(saveTicket);
   } catch (error) {
-    throw new ApiError(500, error.message);
+    throw new ApiError(500, error.message = "Something Went Wrong");
   }
 });
 
