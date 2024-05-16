@@ -21,6 +21,7 @@ const getAllTickets = asyncHandler(async (req, res) => {
       expectedTime,
     }).sort({ createdAt: -1 });
     res.status(200).json(tickets);
+    console.log(tickets)
   } catch (error) {
     throw new ApiError(500, error.message);
   }
