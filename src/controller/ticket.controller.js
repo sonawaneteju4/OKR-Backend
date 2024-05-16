@@ -55,4 +55,16 @@ const createTicket = asyncHandler(async (req, res) => {
   }
 });
 
+// @desc    Get ticket by id
+
+
+
+// @desc    Update ticket
+
+
+
+// @desc    Close ticket
+
+
+
 export { getAllTickets, createTicket };
