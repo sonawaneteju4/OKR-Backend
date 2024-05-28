@@ -78,8 +78,21 @@ const updateTicket = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Close ticket
+// @desc Close ticket
+
+const closeTicket = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    throw new ApiError(400, "Invalid ticket id");
+  }
+  try {
+    
+  }catch (error) {
+    throw new ApiError(500, error.message);
+  }
+})
 
 
 
 export { getAllTickets, createTicket, getTicketById, updateTicket };
+
